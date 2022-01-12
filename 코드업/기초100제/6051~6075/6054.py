@@ -1,0 +1,3 @@
+num1, num2 = input().split()
+print(bool(int(num1)) and bool(int(num2)))
+

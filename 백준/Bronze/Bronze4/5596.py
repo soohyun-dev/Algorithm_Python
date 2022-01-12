@@ -1,0 +1,5 @@
+i1,m1,s1,e1 = map(int,input().split())
+i2,m2,s2,e2 = map(int,input().split())
+t1=(i1+m1+s1+e1)
+t2=(i2+m2+s2+e2)
+print(max(t1,t2))

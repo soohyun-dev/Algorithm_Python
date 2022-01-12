@@ -1,0 +1,5 @@
+year, month, day = input().split('.')
+year = int(year)
+month = int(month)
+day = int(day)
+print(day, month, year, sep=('-'))

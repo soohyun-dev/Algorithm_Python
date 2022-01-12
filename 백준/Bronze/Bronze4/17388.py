@@ -1,0 +1,12 @@
+S,K,H=map(int,input().split())
+T=S+H+K
+if(T>=100):
+  print('OK')
+else:
+  M=min(S,K,H)
+  if(M==S):
+    print('Soongsil')
+  elif(M==K):
+    print('Korea')
+  else:
+    print('Hanyang')
