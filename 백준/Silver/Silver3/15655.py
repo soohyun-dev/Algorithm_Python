@@ -8,9 +8,11 @@ def check(depth):
     return
     
   for i in range(N):
-    if depth==0 or answer[depth-1] < l[i]:
+    if depth==0 or answer[depth-1] < l[i]: # depth==0 이 뒤로 오면 인덱스 오류 , 오름차순 정리
       answer.append(l[i])
       check(depth+1)     
       answer.pop()      
 
 check(0)
+
+

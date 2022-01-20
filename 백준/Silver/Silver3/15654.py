@@ -21,3 +21,5 @@ def check(depth):  # 함수(숫자) 구조이다.
       answer.pop()  # 끝 값만 제거해 순차적으로 호출
 
 check(0)
+
+
