@@ -1,6 +1,5 @@
 N,M=map(int,input().split())
 l=sorted(list(map(int,input().split())))
-visitied=[False]*N
 answer=[]
 
 def check(depth):
@@ -13,3 +12,6 @@ def check(depth):
     answer.pop()
 
 check(0)
+
+
+
