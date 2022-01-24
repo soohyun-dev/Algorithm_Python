@@ -1,9 +1,6 @@
 
-data = list(map(int, input().split()))
+a=[[1, 20], 30]
 
-
-A, B, C = data[0], data[1], data[2]
-
-
-print(A,B,C)
+a[0][0]+=1000
+print(a)
 
