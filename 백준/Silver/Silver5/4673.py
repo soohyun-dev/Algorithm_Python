@@ -10,3 +10,6 @@ self_numbers=sorted(numbers-check_num)
 
 for self_num in self_numbers:
   print(self_num)
+
+
+  
