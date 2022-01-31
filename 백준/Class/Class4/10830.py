@@ -1,6 +1,8 @@
 # 분할
 def devide(N,M,mat):
-  if M==2:
+  if M==1:
+    return mat
+  elif M==2:
     return mul(N,mat,mat)
   else:
     d=devide(N,M//2,mat)
@@ -26,9 +28,7 @@ def mul(N, left_matrix, right_matrix):
 N,M=map(int,input().split())
 l = [list(map(int,input().split())) for _ in range(N)]
 
-
-if M>1:
-  result=devide(N,M,l)
+result=devide(N,M,l)
 
 for row in result:
   for element in row:
