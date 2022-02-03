@@ -1,4 +1,4 @@
-def check(depth):
+def dfs(depth):
   if len(answer)==N:
     print(' '.join(map(str, answer)))
     return
@@ -7,7 +7,7 @@ def check(depth):
     if not visited[i]:
       answer.append(l[i])
       visited[i]=True
-      check(depth+1)
+      dfs(depth+1)
       visited[i]=False
       answer.pop()
 
@@ -18,4 +18,7 @@ visited=[False]*N
 for i in range(1,N+1):
   l.append(i)
 
-check(0)
+dfs(0)
+
+
+
