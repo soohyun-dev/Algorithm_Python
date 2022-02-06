@@ -22,3 +22,6 @@ for _ in range(int(input())):
             right*=n
 
         print(left//right)
+
+
+        
