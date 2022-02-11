@@ -9,3 +9,5 @@ for i in range(3,1000001):
 
 for j in range(int(input())):
     print(dp[int(input())])
+
+
