@@ -1,23 +1,21 @@
 import sys
 input=sys.stdin.readline
 
-def check(answer_checked):
-    if sum(answer_checked)>n:
-        return
-    if sum(answer_checked)==n:
-        a=str(sorted(answer_checked))    
-        answer.append(a)
+dp=[1]*10001  # 1만 가지고 합 만든 경우
 
-    for i in range(1,4):
-        answer_checked.append(i)
-        check(answer_checked)
-        answer_checked.pop()
+cnt=0
+for i in range(2,10001):
+    if i%2==0:
+        cnt+=1
+    dp[i]+=cnt
+
+cnt=1
+for j in range(3,10001):
+    dp[j]+=dp[j-3]
+
+T=int(input())
+
+for k in range(T):
+    print(dp[int(input())])
 
 
-
-for i in range(int(input())):
-    n=int(input())
-    answer=[]
-    check([])
-    answer=set(answer)
-    print(len(answer))
