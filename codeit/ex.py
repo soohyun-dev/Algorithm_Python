@@ -1,27 +1,34 @@
 import sys
-input=sys.stdin.readline
+
+sys.setrecursionlimit(10000)
+
+N, M = map(int, sys.stdin.readline().split())
+
+graph = [[] for _ in range(N+1)]
+graph[0] = [0,0]
+visited = [False for _ in range(N+1)]
+
+count = 0
+
+for _ in range(M):
+    start, end = map(int, sys.stdin.readline().split())
+    graph[start].append(end)
+    graph[end].append(start)
+    graph[start].sort()
+    graph[end].sort()
 
 
-for i in range(int(input())):
-    l=[1,2,3]
-    n=int(input())
-    cnt=0
+def DFS(graph, start, visited):
+    visited[start] = True
 
-    def check(answer_check):
-        global cnt
-        if sum(answer_check)>n:
-            return
-        if sum(answer_check)==n:
-            cnt+=1
-            return
-            
-        for i in range(3):
-            answer_check.append(l[i])
-            check(answer_check)
-            answer_check.pop()
-
-    check([])
-
-    print(cnt%1000000009)
+    for i in graph[start]:
+        if not visited[i]:
+            DFS(graph, i, visited)
 
 
+for i in range(1, len(visited)):
+    if visited[i] == False:
+        count += 1
+        DFS(graph, i, visited)
+
+print(count)
