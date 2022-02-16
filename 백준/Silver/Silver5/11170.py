@@ -6,5 +6,6 @@ for i in range(int(input())):
         for j in range(len(l)):
             if l[j]=='0':
                 cnt+=1
-
     print(cnt)
+
+
