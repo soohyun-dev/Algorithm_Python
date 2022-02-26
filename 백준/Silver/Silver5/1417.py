@@ -19,3 +19,5 @@ for j in range(1,N):
         cnt+=1
         break
 print(cnt)
+
+
