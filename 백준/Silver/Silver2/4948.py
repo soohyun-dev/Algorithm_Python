@@ -3,7 +3,7 @@ input=sys.stdin.readline
 
 check=[False]*2+[True]*246911
 
-for i in range(2,451):
+for i in range(2,501):
     tmp=i+i
     for j in range(tmp,246913,i):
         check[j]=False
