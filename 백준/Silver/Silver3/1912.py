@@ -28,8 +28,6 @@ for i in range(1,N):
     if i==N-1 and num[-1]>0:
         store.append(tmp)
 
-print(store)
-
 if len(store)==1 and check==False:  # num 리스트에 음수밖에 없을 때
     print(max(num))
 else:
