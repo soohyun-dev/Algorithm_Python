@@ -13,12 +13,12 @@ else:
         cut_check=sorted(cut, reverse=True)
         if cut!= cut_check:
             tmp=l[i]
-            front=l[:i]
-            back=sorted(cut)
+            front=l[:i]  # 앞자리
+            back=sorted(cut)  # 뒷자리
             num=back.index(tmp)
-            center=back[num+1]
+            center=back[num+1]  # 중간자리
             back.remove(center)
-            print(*(front+[center]+back))
+            print(*(front+[center]+back))  # 이어 붙이기
             break
 
 
