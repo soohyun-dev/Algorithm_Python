@@ -1,4 +1,4 @@
 
-a=[1, 2, 3, 4]
-print(a[2:])
-print(a[:2])
+for i in range(10):
+    i+=5
+    print(i)

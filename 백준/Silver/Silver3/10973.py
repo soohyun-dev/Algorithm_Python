@@ -14,11 +14,12 @@ else:
         if cut!=cut_check:
             tmp=l[i]
             front=l[:i]
-            back=sorted(cut)
+            back=sorted(cut, reverse=True)
             num=back.index(tmp)
-            center=back[num-1]
+            center=back[num+1]
             back.remove(center)
-            back=sorted(back, reverse=True)
             print(*(front+[center]+back))
             break
+
+
 
