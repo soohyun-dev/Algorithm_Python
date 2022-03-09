@@ -12,3 +12,4 @@ for _ in range(M):
         cnt+=1
     
 print(cnt)
+
