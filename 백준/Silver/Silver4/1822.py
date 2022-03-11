@@ -2,7 +2,7 @@ import sys
 input=sys.stdin.readline
 
 nA,nB=map(int,input().split())
-A,B={},{}
+A={}
 for n in map(int,input().split()):
     A[n]=True
 for n in map(int,input().split()):
@@ -14,3 +14,5 @@ if len(A)==0:
 else:
     print(len(A))
     print(*sorted(A))
+
+    

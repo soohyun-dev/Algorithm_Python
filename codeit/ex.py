@@ -1,9 +1,2 @@
-nA,nB=map(int,input().split())
+a=['사과', '바나나', '파인애플']
 
-A,B={},{}
-for n in map(int,input().split()):
-    A[n]=True
-for n in map(int,input().split()):
-    if n in A:
-        del(A[n])
-print(A)
