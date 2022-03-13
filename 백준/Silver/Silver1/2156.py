@@ -11,7 +11,6 @@ if n>1:
     dp[2]=sum(wine[:3])
     for i in range(3,n+1):
         dp[i]=max(dp[i-1],dp[i-3]+wine[i-1]+wine[i],dp[i-2]+wine[i])
-print(dp)
 print(dp[-1])
 
         
