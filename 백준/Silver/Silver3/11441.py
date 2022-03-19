@@ -10,4 +10,7 @@ for i in range(1,N):
 M=int(input())
 for i in range(M):
     start,end=map(int,input().split())
-    print(K[end-1]-K[start-1])
+    if start==1:
+        print(K[end-1])
+    else:
+        print(K[end-1]-K[start-2])
