@@ -10,7 +10,7 @@ for i in range(9):
         check=True
     start_cnt+=start[i]
 
-if check==True:
+if check==True and wool_cnt<start_cnt:
     print('Yes')
 else:
     print('No')
