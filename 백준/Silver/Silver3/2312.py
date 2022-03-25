@@ -19,3 +19,4 @@ for i in range(N):
     for i in range(len(value)):
         print(value[i],cnt.count(value[i]))
      
+     
