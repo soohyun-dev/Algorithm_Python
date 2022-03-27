@@ -5,7 +5,7 @@ from collections import deque
 K,L=map(int, input().split())
 store=dict()
 for i in range(L):
-    ID=input().rstrip()
+    ID=int(input())
     store[ID]=i
 
 chart=sorted(store.items(), key=lambda item:item[1])
@@ -15,3 +15,5 @@ for id in chart:
     cnt+=1
     if cnt==K:
         break
+
+
