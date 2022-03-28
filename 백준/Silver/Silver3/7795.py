@@ -6,17 +6,16 @@ for _ in range(T):
     N,M=map(int,input().split())
     A=sorted(list(map(int,input().split())), reverse=True)
     B=sorted(list(map(int,input().split())), reverse=True)
-    a=0
-    b=0
+    cnt_A=0
+    cnt_B=0
     total=0
-    
-    while a<N and b<M:
-        if A[a] > B[b]:
-            total+=M-b
-            a+=1
+
+    while cnt_A<N and cnt_B<M:
+        if A[cnt_A] > B[cnt_B]:
+            total+=M-cnt_B
+            cnt_A+=1
         else:
-            b+=1
+            cnt_A+=1            
             
     print(total)
-
 
