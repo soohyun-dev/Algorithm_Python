@@ -1,14 +1,26 @@
+def check(depth):
+    if len(M)==N:
+        global total
+        sum=0
+        for i in range(N-1):
+            sum+=abs(M[i]-M[i+1])
+        total=max(sum,total)
+        return
+    for i in range(N):
+        if not visited[i]:
+            visited[i]=True
+            M.append(l[i])
+            check(depth+1)
+            M.pop()
+            visited[i]=False
+
 N=int(input())
 l=list(map(int,input().split()))
-l.sort()
-cut=N//2
-small_l=[]
-for i in range(cut):
-  small_l.append(l[i])
-  l.remove(l[i])
-large_l=l
-list=[]
+visited=[False]*N
+M=[]
+total=0
 
-while len(list)!=N:
-  list.append(small_l[cut-1])
-  list.append()
+check(0)
+
+print(total)
+

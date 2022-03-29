@@ -14,5 +14,7 @@ for i in range(T):
         else:
             sum=X[i]
             check[i]=X[i]
-    print(check)
     print(max(check))
+
+
+    
