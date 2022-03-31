@@ -6,6 +6,5 @@ def gcd(a,b):
         return a
 A,B=map(int,input().split())
 cnt=gcd(A,B)
-print(cnt)
 print('1'*cnt)
     
