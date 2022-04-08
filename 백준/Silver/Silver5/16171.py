@@ -6,3 +6,5 @@ if find in newSample:
     print(1)
 else:
     print(0)
+
+    
