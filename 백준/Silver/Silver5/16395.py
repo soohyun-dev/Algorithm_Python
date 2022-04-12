@@ -6,7 +6,6 @@ for i in range(1,n-1):
         tmp.append(sum(pascal[i][j:j+2]))
     pascal.append(tmp)
 
-print(pascal)
 print(pascal[n-2][k-1])
 
 
