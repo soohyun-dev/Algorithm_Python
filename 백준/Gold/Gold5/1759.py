@@ -1,24 +1,35 @@
 import sys
 input=sys.stdin.readline
 
-def check(depth):
-    if len(answer_check)==L:
-        cnt=0
-        for i in range(L-1):
-            if (answer_check[i] in 'aeiou') or (answer_check[L-1] in 'aeiou'):
-                cnt+=1
-            if ord(answer_check[i]) >= ord(answer_check[i+1]):
-                break
-            if (i ==L-2) and cnt!=0:
-                print(''.join(answer_check))
-        return
+def cnt(W):  # 모음, 자음 카운트 함수
+    Vow=0
+    Con=0
+    for i in range(L):
+        if W[i] in 'aeiou':
+            Vow+=1  # 모음 수 카운트
+        else:
+            Con+=1  # 자음 수 카운트
+    if Vow>=1 and Con>=2:
+        return True
+    return
 
-    for i in range(C):
+def check(idx,depth):
+    if len(answer_check)==L:
+        if cnt(answer_check)==True:  # 모음, 자음 체크
+            print(''.join(answer_check))
+        return
+    for i in range(idx,C):
+        if not visited[i]:
             answer_check.append(word[i])
-            check(depth+1)
+            visited[i]=True
+            check(i+1,depth+1)
+            visited[i]=False
             answer_check.pop()
 
 L,C=map(int,input().split())
-word=sorted(list(map(str,input().split())))
+word=sorted(input().split())
 answer_check=[]
-check(0)
+visited=[False]*(C+1)
+check(0,0)
+
+

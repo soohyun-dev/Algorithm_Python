@@ -11,7 +11,6 @@ for j in range(1,W):
     cnt=C-1
     for k in range(j+1):
         sum+=pascal[R][cnt]
-        print(pascal[R][cnt])
         cnt+=1
     R+=1
 print(sum)
