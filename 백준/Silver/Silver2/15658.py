@@ -8,7 +8,7 @@ def check(num, idx):
         max_num=max(max_num, num)
         min_num=min(min_num, num)
         return
-        
+
     if C[0]>0:
         C[0]-=1
         check(num+A[idx], idx+1)
@@ -29,8 +29,8 @@ def check(num, idx):
 N=int(input())
 A=list(map(int,input().split()))
 C=list(map(int,input().split()))
-max_num=0
-min_num=0
+max_num=-999999999
+min_num=999999999
 
 check(A[0],1)
 print(max_num)

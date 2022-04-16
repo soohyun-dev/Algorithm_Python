@@ -1,28 +1,27 @@
 import sys
-input = sys.stdin.readline
+input=sys.stdin.readline
 
-def dfs(len, idx):
-    if len == l:
-        vo = 0
-        co = 0
-        for i in range(l):
-            if arr[i] in 'aeiou': vo += 1
-            else: co += 1
-        if vo >= 1 and co >= 2:
-            print(''.join(arr))
+N=int(input())
+nums=list(map(int,input().split()))
+tmp=[]
+visited=[False]*(N+1)
+sum=0
+
+def check(depth,idx):
+    global sum
+
+    if len(tmp)==2:
+        sum+=tmp[0]*tmp[1]
         return
+    
+    for i in range(idx, N):
+        if not visited[i]:
+            visited[i]=True
+            tmp.append(nums[i])
+            check(depth+1, i+1)
+            tmp.pop()
+            visited[i]=False
 
-    for i in range(idx, c):
-        if check[i] == 0:
-            arr.append(s[i])
-            check[i] = 1
-            dfs(len + 1, i + 1)
-            check[i] = 0
-            del arr[-1]
-l, c = map(int, input().split())
-check = [0 for i in range(c)]
-arr = []
+check(0,0)
+print(sum)
 
-s = input().split()
-s.sort()
-dfs(0, 0)
