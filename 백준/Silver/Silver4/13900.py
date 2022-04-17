@@ -6,3 +6,4 @@ for num in nums:
     hap-=num
     sum+=num*hap
 print(sum)
+
