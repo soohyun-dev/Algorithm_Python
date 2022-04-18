@@ -1,5 +1,6 @@
 import sys
 input=sys.stdin.readline
+
 names=[]
 N=int(input())
 for i in range(N):
