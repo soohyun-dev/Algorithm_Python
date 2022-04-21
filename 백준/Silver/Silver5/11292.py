@@ -1,5 +1,4 @@
 import sys
-from tokenize import Double
 input=sys.stdin.readline
 
 while True:
