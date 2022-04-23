@@ -13,7 +13,6 @@ origin_price=total
 set_price=0
 for i in range(cnt):
     tmp=burger[i]+side[i]+drink[i]
-    print(tmp)
     total-=tmp
     set_price+=int(tmp*0.9)
 
