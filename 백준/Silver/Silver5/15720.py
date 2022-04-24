@@ -18,3 +18,5 @@ for i in range(cnt):
 
 print(origin_price)
 print(set_price+total)
+
+

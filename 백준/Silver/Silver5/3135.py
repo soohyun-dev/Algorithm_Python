@@ -15,3 +15,5 @@ if abs(A-B) <= abs(change-B):
 else:
     sum+=abs(change-B)
     print(sum)
+
+
