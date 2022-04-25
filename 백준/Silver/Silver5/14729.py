@@ -8,3 +8,6 @@ for i in range(N):
 score.sort()
 for i in range(7):
     print("{:.3f}".format(score[i]))
+
+
+    
