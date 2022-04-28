@@ -8,7 +8,7 @@ def check(depth):
     for i in range(1,len(W)-1):
         tmp=W[i-1]*W[i+1]
         store=W[i]
-        W.remove(W[i])
+        del W[i]
         check(tmp+depth)
         W.insert(i, store)
 
