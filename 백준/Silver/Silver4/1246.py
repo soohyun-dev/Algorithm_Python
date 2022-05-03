@@ -10,18 +10,21 @@ for i in range(M):
 
 if N>=M:
     people.sort()
-    for i in range(M):
-        cnt=M-i
-        if sum < people[i]*cnt:
-            price=people[i]
-            sum=people[i]*cnt
+    check=True
+    loop=M
 else:
     people.sort(reverse=True)
-    for i in range(N):
-        cnt=i+1
-        if sum < people[i]*cnt:
-            price=people[i]
-            sum=people[i]*cnt
+    check=False
+    loop=N
 
+for i in range(loop):
+    if check==True:
+        cnt=M-i
+    else:
+        cnt=i+1
+    if sum < people[i]*cnt:
+        price=people[i]
+        sum=people[i]*cnt
+            
 print(price, sum)
 
