@@ -1,22 +1,20 @@
 import sys
+input=sys.stdin.readline
 
 N,M=map(int,input().split())
-l=[]
-K=[]
-if N<3:
-  print(0)
-else:
-  for i in range(1,N+1):
-    l.append(i)
-  for i in range(M):
-    a=[]
-    for j in range(len(l)):
-      a.append(l[j])
-    A,B=map(int,sys.stdin.readline().split())
-    a.remove(A)
-    a.remove(B)
-    if a not in K:
-      K.append(a)
-  print(len(K))
 
-  
+check=[[False for _ in range(N)] for _ in range(N)]
+for i in range(M):
+    front, back = map(int,input().split())
+    check[front-1][back-1]=True
+    check[back-1][front-1]=True
+
+sum=0
+
+for i in range(N):
+    for j in range(i+1,N):
+        for k in range(j+1,N):
+            if not check[i][j] and not check[i][k] and not check[j][k]:
+                sum+=1
+
+print(sum)
