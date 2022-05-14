@@ -8,7 +8,7 @@ def check(depth):
                 break
         if sum>=500:
             cnt+=1
-        sum=500
+        sum=500  # sum 값 초기화
         return
 
     for i in range(N):
