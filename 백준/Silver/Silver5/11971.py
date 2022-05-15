@@ -21,3 +21,5 @@ for i in range(100):
         tmp=b[i]-a[i]
 
 print(tmp)
+
+
