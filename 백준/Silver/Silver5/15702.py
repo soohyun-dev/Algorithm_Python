@@ -6,7 +6,7 @@ N,M=map(int,input().split())
 score=list(map(int,input().split()))
 
 sum=0
-num=101
+num=100001
 
 for i in range(M):
     tmp=list(input().split())
@@ -22,3 +22,6 @@ for i in range(M):
         num=min(num,int(tmp[0]))
         
 print(num, sum)
+
+
+
