@@ -25,3 +25,4 @@ for i in range(N):
             for m in range(W):
                 del word[l][0]
 print(*original, sep='')         
+
