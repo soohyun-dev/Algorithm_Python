@@ -9,6 +9,6 @@ for i in list(map(int,input().split())):
     if cnt[i]>=1:
         cnt[i]-=1
     else:
-        sum=0
+        sum+=1
         
 print(sum)
