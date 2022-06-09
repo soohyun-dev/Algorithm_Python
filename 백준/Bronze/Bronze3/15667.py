@@ -1,8 +1,6 @@
 num=int(input())
 
-for i in range(2,num):
-    L=num//i
-    L=L//i
-    if L==1:
+for i in range(1,num+1):
+    if 1+i+(i**2)==num:
         print(i)
         break
