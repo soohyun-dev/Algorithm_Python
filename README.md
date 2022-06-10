@@ -5,3 +5,6 @@
 <h3> 🏆 My BOJ</h3>
  
  [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=bmy1320)](https://solved.ac/bmy1320/)
+
+
+<h3>최장스트릭 248일 (2022-06-10 기준) </h3>
