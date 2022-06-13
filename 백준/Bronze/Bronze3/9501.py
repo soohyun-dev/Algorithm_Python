@@ -8,3 +8,5 @@ for _ in range(int(input())):
         if D<=result:
             cnt+=1
     print(cnt)
+    
+    
