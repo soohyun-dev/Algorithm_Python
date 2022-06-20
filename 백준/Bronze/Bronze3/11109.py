@@ -5,9 +5,9 @@ for _ in range(int(input())):
     d,n,s,p=map(int,input().split())
     A=n*s
     B=d+n*p
-    if A>B:
+    if A<B:
         print('do not parallelize')
-    elif A<B:
+    elif A>B:
         print('parallelize')
     else:
         print('does not matter')
