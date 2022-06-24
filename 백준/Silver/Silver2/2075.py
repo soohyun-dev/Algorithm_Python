@@ -12,6 +12,6 @@ for _ in range(N):
         heapq.heappush(heap, tmp[i])
         if len(heap)>N:
             heapq.heappop(heap)
-print(heap)
+            
 print(heap[0])
 
