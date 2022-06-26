@@ -11,7 +11,7 @@ for i in range(9):
 
 if check==False:
     print('hacker')
-elif sum==100:
+elif sum>=100:
     print('draw')
 elif sum<100:
     print('none')
