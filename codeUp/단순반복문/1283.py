@@ -18,3 +18,5 @@ elif tmp>result:
 elif tmp<result:
     print(result-tmp)
     print('good')
+    
+    

@@ -1,6 +1,3 @@
-from re import L
-
-
 h,w=map(int,input().split())
 place=[[0]*w for _ in range(h)]
 n=int(input())

@@ -1,6 +1,3 @@
-from re import L
-
-
 h,r=map(int,input().split())
 for i in range(r):
     for j in range(h):

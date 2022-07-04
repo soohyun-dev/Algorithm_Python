@@ -1,3 +1,6 @@
+from socket import CAN_BCM_RX_CHECK_DLC
+
+
 word=list(input())
 cnt=0
 l=[]
@@ -23,3 +26,5 @@ for i in range(len(l)):
         
 print(c)
 print(cc)
+
+

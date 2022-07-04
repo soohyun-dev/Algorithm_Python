@@ -3,7 +3,7 @@ result=[]
 for i in range(len(code)):
     word=''
     for j in range(len(code[i])):
-        if code[i][j]=='a' or code[i][j]=='b' or code[i][j]=='c':
+        if code[i][j]=='x' or code[i][j]=='y' or code[i][j]=='z':
             tmp=ord(code[i][j])
             word+=chr(tmp-23)
         else:
