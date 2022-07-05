@@ -52,7 +52,12 @@ while True:
             check[x][y]=cnt
         if cnt<=n*m:
             check[x][y]=cnt
-                    
+                  
+tmp=n*m+1
+                  
+for i in range(n):
+    for j in range(m):
+          check[i][j]=tmp-check[i][j]
 for i in range(n):
     print(*check[i], end=' ')
     print()
