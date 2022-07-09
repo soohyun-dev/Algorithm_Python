@@ -21,3 +21,5 @@ while True:
 
 if check==False:
     print(1)
+    
+    

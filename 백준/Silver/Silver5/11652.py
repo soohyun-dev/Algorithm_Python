@@ -1,3 +1,6 @@
+import sys
+input=sys.stdin.readline
+
 N=int(input())
 dict={}
 for i in range(N):
