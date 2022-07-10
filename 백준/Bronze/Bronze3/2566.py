@@ -8,7 +8,9 @@ for i in range(9):
             Max=l[j]
             column=i+1
             row=j+1
-    print(Max)
 print(Max)
-print(column, row)
+if Max==0:
+    print(1,1)
+else:
+    print(column, row)
 
