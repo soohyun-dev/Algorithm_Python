@@ -1,8 +1,6 @@
 N=int(input())
 check=[[0]*N for _ in range(N)]
-
 start=N//2
-
 cnt=1
 x=0
 y=start
@@ -28,4 +26,6 @@ while cnt<=N*N:
 for i in range(N):
     print(*check[i], end=' ')
     print()
+    
+    
     

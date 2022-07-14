@@ -18,3 +18,4 @@ for j in range(10):
         if boo==True:
                 print('%d safe' %(j+1))
     
+    

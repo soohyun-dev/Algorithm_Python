@@ -13,3 +13,4 @@ for i in range(n-y+1):
             result=tmp
 print(result)
             
+            

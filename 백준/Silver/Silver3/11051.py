@@ -1,5 +1,4 @@
 n,k=map(int,input().split())
-
 tmp=n-k
 down=1
 up=1
@@ -18,3 +17,4 @@ for j in range(b+1,n+1):
     
 result=(up//down)%10007
 print(result)
+

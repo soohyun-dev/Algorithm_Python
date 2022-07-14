@@ -31,3 +31,6 @@ for i in range(Y,N):
 for i in range(N):
     print(*check[i], end=' ')
     print()
+    
+    
+    

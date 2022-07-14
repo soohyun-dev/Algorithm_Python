@@ -25,3 +25,4 @@ for i in range(N):
     print(*check[i], end=' ')
     print()
     
+    

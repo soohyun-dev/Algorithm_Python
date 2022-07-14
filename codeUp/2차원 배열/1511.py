@@ -13,3 +13,4 @@ for i in range(N):
         check[i][j]=cnt
         cnt+=1
 print(sum)
+
