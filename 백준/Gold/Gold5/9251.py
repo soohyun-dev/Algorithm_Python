@@ -10,3 +10,5 @@ for i in range(1,len(B)+1):
            check[i][j]=max(check[i-1][j],check[i][j-1])
 
 print(check[-1][-1])
+
+
