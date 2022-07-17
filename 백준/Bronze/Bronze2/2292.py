@@ -7,3 +7,5 @@ while N>result:
     
 print(cnt)
     
+    
+    
