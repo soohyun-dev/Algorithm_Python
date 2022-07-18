@@ -30,6 +30,8 @@ for _ in range(int(input())):
                 check(i,j)
                 cnt+=1
     print(cnt)
+    
+    
 
        
     
