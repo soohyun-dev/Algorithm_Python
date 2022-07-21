@@ -17,4 +17,3 @@ check=[0]*100001
 dq=deque()
 dq.append(N)
 bfs()
-print(check[0:50])
