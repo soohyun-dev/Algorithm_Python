@@ -1,5 +1,3 @@
-from ipaddress import collapse_addresses
-
 from collections import deque
 
 vertical=[1,2,2,1,-1,-2,-2,-1]

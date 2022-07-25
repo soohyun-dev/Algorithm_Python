@@ -4,4 +4,5 @@ for i in range(N):
     x,y=map(int,input().split())
     place[x-1][y-1]=1
 for j in range(19):
-    print(*place[j])
+    print(*place[j], end=' ')
+    print()

@@ -1,5 +1,4 @@
 from collections import deque
-from glob import glob
 
 vertical=[1,-1,0,0,-1,-1,1,1]
 parallel=[0,0,1,-1,-1,1,-1,1]
@@ -40,4 +39,5 @@ while True:
         print(0)
     else:
         print(cnt-2)
+    
     

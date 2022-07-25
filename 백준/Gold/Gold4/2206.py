@@ -32,5 +32,3 @@ def bfs(x,y,z):
     return -1
 
 print(bfs(0,0,0))
-for i in range(N):
-    print(visitied[i])

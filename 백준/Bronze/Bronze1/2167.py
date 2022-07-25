@@ -8,9 +8,7 @@ for i in range(N):
     for j in range(M):
         if j>=1:
             arr[i][j]+=arr[i][j-1]
-            
-for i in range(N):
-    print(arr[i])
+
 for i in range(int(input())):
     i,j,x,y=map(int,input().split())
     sum=0

@@ -28,7 +28,7 @@ for i in range(N):
     for j in range(M):
         if paper[i][j]==1:
             dq.append([i,j])
-            
+            paper[i][j]=2  # 이 부분을 작성 안하면 1이 한 칸이상 차지할 때 카운트가 더 됨.
             bfs()
 
 print(len(result)-1)

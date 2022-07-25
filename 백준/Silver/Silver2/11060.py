@@ -18,4 +18,4 @@ else:
     if check[-1][0]==0:
         print(-1)
     else:
-        print(check[-1][0]-1)
+        print(check[-1][0])

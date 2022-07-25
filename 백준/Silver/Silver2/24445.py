@@ -9,7 +9,6 @@ def bfs(graph,start):
     while dq:
         n=dq.popleft()
         n.sort(reverse=True)
-        print(n)
         for i in n:
             if check[i][1]==0:     
                 check[i][0]=cnt

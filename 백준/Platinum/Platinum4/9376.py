@@ -32,8 +32,8 @@ for _ in range(int(input())):
         jail.append('.'+input().strip()+'.')
     jail.append('.'*(M+2))
     pri=[]
-    for i in range(N):  #죄수 위치 파악
-        for j in range(M):
+    for i in range(N+2):  #죄수 위치 파악
+        for j in range(M+2):
             if jail[i][j]=='$':
                 pri.append([i,j])
                 
@@ -41,14 +41,7 @@ for _ in range(int(input())):
     second=bfs(pri[1][0],pri[1][1])
     out=bfs(0,0)
     answer=sys.maxsize
-    for i in range(N+2):
-        print(first[i])
-    print()
-    for i in range(N+2):
-        print(second[i])
-    print()
-    for i in range(N+2):
-        print(out[i])    
+    
     for i in range(N+2):
         for j in range(M+2):
             if first[i][j]!=-1 and second[i][j]!=-1 and out[i][j]!=-1:

@@ -1,8 +1,9 @@
-num=int(input())
-l=[]
-while num>1:
-    num//=2
-    for i in range(3):
-        l.append(num-i)
 
-print(len(l))
+import random
+N=int(input())
+num=[ i for i in range(1,24)]
+LIST=[]
+for i in range(N):
+    LIST.append(*random.sample(num,1))
+    
+print(*LIST)

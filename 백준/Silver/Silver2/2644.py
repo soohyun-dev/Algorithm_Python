@@ -15,14 +15,10 @@ def bfs(graph,X,Y):
                 check.append(j)
                 dq.append(j)
     result=course[Y]
-    print(course)
     if result==0:
         return -1
     else:
         return result
-  
-            
-
 
 N=int(input())
 a,b=map(int,input().split())
