@@ -3,11 +3,9 @@ import sys
 input=sys.stdin.readline
 
 N,M=map(int,input().split())
-LIST=[]
 graph=[[] for _ in range(N+1)]
 for i in range(M):
     x,y=map(int,input().split())
-    LIST.append(y)
     graph[y].append(x)
 
 def bfs(start):
@@ -27,8 +25,7 @@ def bfs(start):
 
 MAX=0
 answer=[]
-LIST=set(LIST)
-for i in LIST:
+for i in range(1,N+1):
     if graph[i]:
         result=bfs(i)
         if MAX < result:

@@ -6,7 +6,6 @@ parallel=[0,0,1,-1]
 
 N,M=map(int,input().split())
 MAP=[]
-check=[[0]*(M) for _ in range(N)]
 for i in range(N):
     MAP.append(list(input()))
 MAX=0
@@ -37,7 +36,6 @@ def bfs(x,y):
             my=Y+parallel[i]
             if 0<=mx<N and 0<=my<M:
                 if COPY[mx][my]=='L':
-                    check[mx][my]=cnt+1
                     COPY[mx][my]='N'
                     dq.append([mx,my,cnt+1])
                     tmp=cnt+1      

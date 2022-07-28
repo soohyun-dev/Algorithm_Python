@@ -32,25 +32,6 @@ def bfs(x,y):
     for i in range(N):  # 녹고 남은 치즈 세기
         cnt+=MAP[i].count(1)
     return cnt
-
-# start=[] # 만약 테두리에 공기층이 없는 경우 확인
-# for i in range(N):
-#     if i==0 or i==N-1:
-#         for j in range(M):
-#             if MAP[i][j]==0:
-#                 start.append([i,j])
-#     else:
-#         for j in range(M):
-#             if j==0 or j==M-1:
-#                 if MAP[i][j]==0:
-#                     start.append([i,j])
-                    
-# if len(start)>0:  # 공기층이 있는 구역 위치 1곳만 설정
-#     a,b=start[0][0],start[0][1]
-# else:  # 공기층이 없다면 프로그램 종료
-#     print(0)
-#     print(0)
-#     exit(0)
     
 answer=[]  # 줄어드는 치즈값 저장
 while True:

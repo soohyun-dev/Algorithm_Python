@@ -11,16 +11,16 @@ for i in range(N):
 def bfs(x,y,cnt):
     dq=deque()
     dq.append([x,y])
-    visitied[x][y]=True
+    visited[x][y]=True
     while dq:
         X,Y=dq.popleft()
         for i in range(4):
             mx=X+vertical[i]
             my=Y+parallel[i]
             if 0<=mx<N and 0<=my<M:
-                if iceberg[mx][my]!=0 and visitied[mx][my]==False:
+                if iceberg[mx][my]!=0 and visited[mx][my]==False:
                     dq.append([mx,my])
-                    visitied[mx][my]=True
+                    visited[mx][my]=True
                 elif iceberg[mx][my]==0:
                     melting[X][Y]+=1
                     
@@ -29,16 +29,13 @@ def bfs(x,y,cnt):
 year=0
 while True:
     cnt=0
-    result=[]
-    visitied=[[False]*M for _ in range(N)]
+    visited=[[False]*M for _ in range(N)]
     melting=[[0 for _ in range(M)] for _ in range(N)] 
     for i in range(N):
         for j in range(M):
-            if iceberg[i][j]!=0 and visitied[i][j]==False:
+            if iceberg[i][j]!=0 and visited[i][j]==False:
                 cnt=bfs(i,j,cnt)
-                for k in range(N):
-                    print(iceberg[k])
-                print(cnt)
+                
     if cnt>=2:
         print(year)
         exit(0)
