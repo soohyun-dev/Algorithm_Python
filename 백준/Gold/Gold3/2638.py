@@ -25,7 +25,6 @@ def bfs(x,y):
                     if visited[mx][my]==0:
                         visited[mx][my]+=1
                     elif visited[mx][my]==1:
-                        visited[mx][my]=2
                         MAP[mx][my]=0
                 elif MAP[mx][my]==0 and visited[mx][my]==0:
                     dq.append([mx,my])

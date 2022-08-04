@@ -40,7 +40,6 @@ for i in range(N):
         if MAP[i][j]==2:
             virus.append([i,j]) 
             MAP[i][j]=0
-            
 
 result=[]
 LIST=list(combinations(virus,M))

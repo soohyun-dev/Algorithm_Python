@@ -53,8 +53,8 @@ for i in range(R):
                     answer[0]+=result[1]
                 elif result[0]=='wolf':
                     answer[1]+=result[1]
-                    
-for i in range(R):
-    print(visited[i])
 
 print(*answer)
+
+
+# 17:05

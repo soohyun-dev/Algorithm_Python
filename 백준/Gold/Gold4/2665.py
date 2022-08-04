@@ -18,16 +18,14 @@ def bfs(x,y):
         for i in range(4):
             mx,my=X+vertical[i],Y+parallel[i]
             if 0<=mx<N and 0<=my<N:
-                if visited[mx][my][0]==0:
+                if visited[mx][my][0]==0: # 첫방문
+                    dq.append([mx,my])
+                    visited[mx][my][0]=1
                     if MAP[mx][my]==0:
-                        dq.append([mx,my])
-                        visited[mx][my][0]=1
                         visited[mx][my][1]=visited[X][Y][1]+1
                     elif MAP[mx][my]==1:
-                        dq.append([mx,my])
-                        visited[mx][my][0]=1
                         visited[mx][my][1]=visited[X][Y][1]
-                else:
+                else:  # 재방문
                     if MAP[mx][my]==0 and visited[mx][my][1]>visited[X][Y][1]:
                         dq.append([mx,my])
                         visited[mx][my][1]=visited[X][Y][1]+1
@@ -35,8 +33,6 @@ def bfs(x,y):
                         dq.append([mx,my])
                         visited[mx][my][1]=visited[X][Y][1]
                     
-    for i in range(N):
-        print(visited[i])
     return visited[N-1][N-1][1]
 
 print(bfs(0,0))

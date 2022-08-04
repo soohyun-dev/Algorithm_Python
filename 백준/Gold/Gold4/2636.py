@@ -21,7 +21,7 @@ def bfs(x,y):
             my=Y+parallel[i]
             if 0<=mx<N and 0<=my<M:
                 if visited[mx][my]==False:
-                    if MAP[mx][my]==1 and MAP[x][y]==0:
+                    if MAP[mx][my]==1 and MAP[X][Y]==0:
                             visited[mx][my]=True
                             MAP[mx][my]=0
                     elif MAP[mx][my]==0:

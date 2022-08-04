@@ -31,11 +31,9 @@ for i in range(1,N+1):
     result.append(bfs(i))
 
 MIN=min(result)
-CNT=0
 answer=[]
 for i in range(N):
     if result[i]==MIN:
-        CNT+=1
         answer.append(i+1)
 print(MIN-1, len(answer))
 print(*answer)
