@@ -1,30 +1,40 @@
 from collections import deque
-q = deque()
-from sys import stdin
-input = stdin.readline
+import sys
+input=sys.stdin.readline
 
-n,m,k = map(int, input().split())
-vis = [[[0]*(k+1) for _ in range(m)] for __ in range(n)]
-arr = [list(map(int,input().strip())) for _ in range(n)]
-dx = [1,0,-1,0]
-dy = [0,1,0,-1]
+vertical=[1,-1,0,0]
+parallel=[0,0,1,-1]
+upDown=[1,2,2,1,-1,-2,-2,-1]
+leftRight=[-2,-1,1,2,2,1,-1,-2]
 
-def bfs() :
-    q.append([0,0,k]) # k는 벽을 뚫을 수 있는 수
-    vis[0][0][k] = 1
-    while q :
-        x,y,z = q.popleft()
-        if x == n-1 and y == m-1 :
-            return vis[x][y][z]
-        for i in range(4) :
-            nx ,ny = dx[i] + x, dy[i]+y
-            if 0<=nx<n and 0<=ny<m :
-                if arr[nx][ny]==1 and z>0 and vis[nx][ny][z-1]==0:
-                    vis[nx][ny][z-1] = vis[x][y][z]+1
-                    q.append([nx,ny,z-1])
-                elif arr[nx][ny]==0 and vis[nx][ny][z]==0:
-                    vis[nx][ny][z] = vis[x][y][z]+1
-                    q.append([nx,ny,z]) 
-    return -1
+K=int(input())
+M,N=map(int,input().split())
+MAP=[list(map(int,input().rstrip().split())) for _ in range(N)]
+visited=[[[0]*(K+1) for _ in range(M)] for _ in range(N)]
 
-print(bfs())
+dq=deque()
+def bfs():
+    dq.append([0,0,0])
+    visited[0][0][0]=1
+    while dq:
+        X,Y,Z=dq.popleft()
+        if X==N-1 and Y==M-1:
+            print(visited[X][Y][Z])
+            exit(0)
+        if Z<K:
+            for j in range(8):
+                mx,my=X+upDown[j],Y+leftRight[j]
+                if 0<=mx<N and 0<=my<M:
+                    if MAP[mx][my]==0 and visited[mx][my][Z+1]==0:
+                        visited[mx][my][Z+1]=visited[mx][my][Z]+1
+                        dq.append([mx,my,Z+1])
+        for i in range(4):
+            mx,my=X+vertical[i],Y+parallel[i]
+            if 0<=mx<N and 0<=my<M:
+                if MAP[mx][my]==0:
+                    if visited[mx][my][Z]==0:
+                        dq.append([mx,my,Z])
+                        visited[mx][my][Z]=visited[X][Y][Z]+1
+    print(-1)
+    
+bfs()
