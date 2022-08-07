@@ -21,23 +21,24 @@ def bfs(x,y):
         for i in range(4):
             mx,my=X+vertical[i],Y+parallel[i]
             if 0<=mx<N and 0<=my<N:
-                tmp=abs(MAP[X][Y]-MAP[mx][my])
-                if tmp>=L and tmp<=R:
-                    SUM+=MAP[mx][my]
-                    dq.append([mx,my])
-                    store.append([mx,my])
-                    visited[mx][my]=True
-    a=SUM//len(store)
-    for i in range(len(store)):
-        MAP[store[i][0]][store[i][1]]=a
+                if visited[mx][my]==False:
+                    tmp=abs(MAP[X][Y]-MAP[mx][my])
+                    if tmp>=L and tmp<=R:
+                        SUM+=MAP[mx][my]
+                        dq.append([mx,my])
+                        store.append([mx,my])
+                        visited[mx][my]=True
     if len(store)!=1:
+        a=SUM//len(store)
+        for i in range(len(store)):
+            MAP[store[i][0]][store[i][1]]=a
         return True
     else:
         return False
     
 cnt=0
-visited=[[False for _ in range(N)] for _ in range(N)]
 while True:
+    visited=[[False for _ in range(N)] for _ in range(N)]
     result=[]
     for i in range(N):
         for j in range(N):

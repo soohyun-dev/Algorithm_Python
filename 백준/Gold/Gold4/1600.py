@@ -11,8 +11,8 @@ K=int(input())
 M,N=map(int,input().split())
 MAP=[list(map(int,input().rstrip().split())) for _ in range(N)]
 visited=[[[0]*(K+1) for _ in range(M)] for _ in range(N)]
-
 dq=deque()
+
 def bfs():
     dq.append([0,0,0,0])
     while dq:
@@ -20,12 +20,9 @@ def bfs():
         if X==N-1 and Y==M-1:
             print(O)
             exit(0)
-        for i in range(4):
-            mx,my=X+vertical[i],Y+parallel[i]
-            if 0<=mx<N and 0<=my<M:
-                if MAP[mx][my]==0 and visited[mx][my][Z]==0:
-                    dq.append([mx,my,Z,O+1])
-                    visited[mx][my][Z]=visited[X][Y][Z]+1
+        for i in range(N):
+            print(visited[i])
+        print()
         if Z<K:
             for j in range(8):
                 mx,my=X+upDown[j],Y+leftRight[j]
@@ -33,9 +30,15 @@ def bfs():
                     if MAP[mx][my]==0:
                         if visited[mx][my][Z+1]==0:
                             visited[mx][my][Z+1]=visited[mx][my][Z]+1
+                            print(dq)
                             dq.append([mx,my,Z+1,O+1])
+        for i in range(4):
+            mx,my=X+vertical[i],Y+parallel[i]
+            if 0<=mx<N and 0<=my<M:
+                if MAP[mx][my]==0 and visited[mx][my][Z]==0:
+                    print(dq)
+                    dq.append([mx,my,Z,O+1])
+                    visited[mx][my][Z]=visited[X][Y][Z]+1
     print(-1)
     
 bfs()
-for i in range(N):
-    print(MAP[i])

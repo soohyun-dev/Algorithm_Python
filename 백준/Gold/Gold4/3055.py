@@ -55,5 +55,5 @@ while True:
         break
     if result=='KAKTUS':
         print('KAKTUS')
-        exit(0)
+        break
     
