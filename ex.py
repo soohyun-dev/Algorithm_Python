@@ -6,30 +6,33 @@ vertical=[1,-1,0,0]
 parallel=[0,0,1,-1]
 
 N,M,K=map(int,input().split())
-MAP=[]
-for i in range(N):
-    MAP.append(list(map(int,input().rstrip())))
+MAP=[list(map(int,input().rstrip())) for _ in range(N)]
+visited=[[[0]*(K+1) for _ in range(M)] for _ in range(N)]
 
-def bfs(x,y,skill):
-    visited=[[[0]*(K+1) for _ in range(M)] for _ in range(N)]
-    visited[x][y][skill]=1
+def bfs():
+    time=-1
+    cnt=1
     dq=deque()
-    dq.append([x,y,skill])
+    dq.append([0,0,0,time,cnt])
     while dq:
-        X,Y,Z=dq.popleft()
-        if X==N-1 and Y==M-1:
-            return visited[X][Y][Z]
+        X,Y,Z,T,C=dq.popleft()
+        visited[X][Y][Z]=1
+        T=T*(-1)
         for i in range(4):
-            mx=X+vertical[i]
-            my=Y+parallel[i]
+            mx,my=X+vertical[i],Y+parallel[i]
+            if mx==N-1 and my==M-1:
+                print(C+1)
+                exit(0)
             if 0<=mx<N and 0<=my<M:
-                if MAP[mx][my]==1 and Z>0 and visited[mx][my][Z-1]==0:
-                    visited[mx][my][Z-1]=visited[X][Y][Z]+1
-                    dq.append([mx,my,Z-1])
-                elif MAP[mx][my]==0 and visited[mx][my][Z]==0:
+                if MAP[mx][my]==0 and visited[mx][my][Z]==0:
+                    dq.append([mx,my,Z,T,C+1])
                     visited[mx][my][Z]=visited[X][Y][Z]+1
-                    dq.append([mx,my,Z])                
-                   
-    return -1
-
-print(bfs(0,0,K))
+                elif MAP[mx][my]==1:
+                    if Z<K and T==1:
+                        dq.append([mx,my,Z+1,T,C+1])
+                        visited[mx][my][Z+1]=visited[X][Y][Z]+1
+                    if Z<K and T==-1:
+                        dq.append([X,Y,Z,T,C+1])
+                        visited[X][Y][Z]+=1
+    print(-1)
+bfs()
