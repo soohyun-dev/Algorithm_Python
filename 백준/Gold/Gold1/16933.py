@@ -12,9 +12,6 @@ dq=deque()
 dq.append([0,0,0,0])
 visited[0][0]=0
 while dq:
-    for i in range(N):
-        print(visited[i])
-    print()
     X,Y,Z,C=dq.popleft()   
     if X==N-1 and Y==M-1:
         print(C+1)

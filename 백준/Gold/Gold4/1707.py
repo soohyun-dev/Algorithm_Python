@@ -5,14 +5,14 @@ input=sys.stdin.readline
 def bfs(i):
     dq=deque()
     dq.append(i)
-    visited[i]=1
+    color[i]=1
     while dq:
         X=dq.popleft()
         for k in graph[X]:
-            if visited[k]==0:
+            if color[k]==0:
                 dq.append(k)
-                visited[k]=visited[X]*(-1)
-            elif visited[X]==visited[k]:
+                color[k]=color[X]*(-1)
+            elif color[X]==color[k]:
                 return False
     
 
@@ -23,10 +23,10 @@ for _ in range(int(input())):
         a,b=map(int,input().split())
         graph[a].append(b)
         graph[b].append(a)
-    visited=[0 for _ in range(V+1)]
+    color=[0 for _ in range(V+1)]
     check=True
     for i in range(1,V+1):
-        if visited[i]==0:
+        if color[i]==0:
             result=bfs(i) 
             if result==False:
                 check=False

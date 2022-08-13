@@ -13,10 +13,10 @@ for i in range(1,N+1):
     if visited[i]==0:
         dq=deque()
         dq.append(i)
+        visited[i]=1
         while dq:
             X=dq.popleft()
-            visited[X]=1
-            for j in graph[i]:
+            for j in graph[X]:
                 if visited[j]==0:
                     visited[j]=visited[X]*(-1)
                     dq.append(j)
