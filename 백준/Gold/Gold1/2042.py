@@ -1,7 +1,7 @@
 import sys
 input=sys.stdin.readline
 
-def init(start,end,index):  # 트리 생성 함수
+def init(start,end,index):  # 세그먼트 트리 생성 함수
     if start==end:
         tree[index]=arr[start]
         return tree[index]
@@ -9,7 +9,7 @@ def init(start,end,index):  # 트리 생성 함수
     tree[index]=init(start,mid,index*2)+init(mid+1,end,index*2+1)
     return tree[index]
 
-def interval_sum(start,end,index,left,right):
+def interval_sum(start,end,index,left,right):  # 구간 합 구하는 함수
     if left>end or right<start:
         return 0
     if left<=start and right >= end:
@@ -40,6 +40,6 @@ for j in range(M+K):
     if a==1:
         ch=c-arr[b-1]
         arr[b-1]=c
-        update(0,len(arr)-1,1,b-1,ch)
+        update(0,len(arr)-1,1,b-1,ch)  
     elif a==2:
         print(interval_sum(0,len(arr)-1,1,b-1,c-1))
