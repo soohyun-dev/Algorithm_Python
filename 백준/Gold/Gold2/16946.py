@@ -14,7 +14,6 @@ def bfs(x,y,C):
     visited[x][y]=1
     cnt=1
     S[x][y]=C
-    store=[[x,y]]
     while dq:
         X,Y=dq.popleft()
         for a,b in dr:
@@ -24,7 +23,6 @@ def bfs(x,y,C):
                     if visited[mx][my]==0:
                         MAP[mx][my]=1
                         dq.append([mx,my])
-                        store.append([mx,my])
                         visited[mx][my]=1
                         cnt+=1
                         S[mx][my]=C

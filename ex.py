@@ -1,5 +1,3 @@
-from collections import deque
-
-dq=deque()
-if len(dq)==0:
-    print(1)
+a=[1,1]
+b=[2,1]
+print(a+b)
