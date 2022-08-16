@@ -7,7 +7,7 @@
  [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=bmy1320)](https://solved.ac/bmy1320/)
 
 
-<h3>최장스트릭 248일 (2022-06-10 기준) </h3>
+<h3>최장스트릭 313일 (2022-08-14 기준) </h3>
 <br/><br/>
 
 <h4>문제에 대한 추가적인 정보는 제 블로그에서 확인하실 수 있습니다.</h4>
