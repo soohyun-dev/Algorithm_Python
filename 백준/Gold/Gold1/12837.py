@@ -1,14 +1,6 @@
 import sys
 input=sys.stdin.readline
 
-def init(start,end,index):
-    if start==end:
-        tree[index]=arr[start]
-    else:
-        mid=(start+end)//2
-        tree[index]=init(start,mid,index*2)+init(mid+1,end,index*2+1)
-    return tree[index]
-
 def update(start,end,index,w,v):
     if w<start or w>end:
         return
