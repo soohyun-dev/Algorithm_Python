@@ -30,7 +30,7 @@ for _ in range(int(input())):
                     elif type(MAP[X][Y])==int:
                         if MAP[mx][my]=='.':
                             dq1.popleft()
-                            MAP[mx][my]=1
+                            MAP[mx][my]=MAP[X][Y]+1
                             dq.append([mx,my])
                             dq1.append((mx,my)) 
         return 'IMPOSSIBLE'

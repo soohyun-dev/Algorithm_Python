@@ -30,12 +30,6 @@ while dq:
                 MAP[mx][my]=Z
                 visited[mx][my]=visited[X][Y]+1
                 dq.append([Z,mx,my])
-                
-for i in range(N):
-    print(visited[i])
-print()
-for i in range(N):
-    print(MAP[i])
 
 if visited[A-1][B-1]>S+1:
     print(0)

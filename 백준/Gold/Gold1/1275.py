@@ -30,10 +30,15 @@ def range_sum(start,end,index,left,right):
 N,Q=map(int,input().split())
 arr=list(map(int,input().split()))
 tree=[0]*(N*4)
+
 init(0,N-1,1)
+
 for i in range(Q):
     a,b,c,d=map(int,input().split())
-    print(range_sum(0,N-1,1,a-1,b-1))
+    if a<=b:
+        print(range_sum(0,N-1,1,a-1,b-1))
+    else:
+        print(range_sum(0,N-1,1,b-1,a-1))
     tmp=d-arr[c-1]
     arr[c-1]=d
     update(0,N-1,1,c-1,tmp)

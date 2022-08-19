@@ -22,7 +22,7 @@ def update(start,end,index,w,v):
         
 def find_min(start,end,index,left,right):
     if start>right or end<left:
-        return
+        return [sys.maxsize,sys.maxsize]
     if start>=left and right>=end:
         return tree[index]
     mid=(start+end)//2

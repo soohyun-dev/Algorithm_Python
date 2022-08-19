@@ -31,4 +31,3 @@ init(0,len(arr)-1,1)
 
 print(tree)
 
-print(interval_sum(0,len(arr)-1,))
