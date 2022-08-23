@@ -1,26 +1,26 @@
-import sys
-import heapq
-input = sys.stdin.readline
-
-v, e = map(int, input().split())
-g = [[] for _ in range(v+1)]
-
-for _ in range(e):
-    a, b, w = map(int, input().split())
-    g[a].append((w, b))
-    g[b].append((w, a))
-
-
-q = g[1] 
-visited = [True, True] + [False]*(v-1)
-heapq.heapify(q)
-answer = 0
-while q:
-    w, dest = heapq.heappop(q)
-    if not visited[dest]:
-        visited[dest] = True
-        answer += w
-        for e in g[dest]:
-            if not visited[e[1]]:
-                heapq.heappush(q, e) 
-print(answer)
+N=int(input())
+arr=list(map(int,input().split()))
+visited=[False]*(N+1)
+k=2 # 직전 배터리 소모량
+b=100  # 남은 배터리량
+tmp=0
+check=False
+for i in range(N):
+    t=arr[i]
+    if not visited[t]:
+        visited[tmp]=False
+        tmp=t
+        visited[t]=True
+        b-=2
+        k=2
+    else:
+        if check==True:
+            k=1
+            check=False
+        k*=2
+        b-=k
+    if b<=0:
+        b=100
+        k=0
+        check=True
+print(100-b)
