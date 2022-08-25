@@ -1,36 +1,32 @@
-from collections import deque
+import heapq
 import sys
 input = sys.stdin.readline
-queue = deque()
+N, M = map(int, input().split())
+start, end = map(int, input().split())
+arr = [[] for _ in range(N+1)]
+for _ in range(M):
+    a, b, weight = map(int, input().split())
+    arr[a].append((weight, b))
+    arr[b].append((weight, a))
+visited = [0] * (N+1)
 
 
-def bfs(V, E, R):
-    V[R][0] = True
-    V[R][1] = 1
-    order = 1
-    queue.append(E[R])
-
-    while queue:
-        u = queue.popleft()
-        u.sort(reverse=True)
-        for edge in u:
-            if not V[edge][0]:
-                order = order + 1
-                V[edge][0] = True
-                V[edge][1] = order
-                queue.append(E[edge])
-
-    for i in range(1, len(V)):
-        print(V[i][1])
+def dijkstra():
+    q = []
+    heapq.heappush(q, (-sys.maxsize, start))
+    visited[start] = sys.maxsize
+    while q:
+        cost, node = heapq.heappop(q)
+        cost = -cost
+        if visited[node] > cost:
+            continue
+        for ncost, nnode in arr[node]:
+            temp = min(cost, ncost)
+            if visited[nnode] < temp:
+                visited[nnode] = temp
+                heapq.heappush(q, (-temp, nnode))
 
 
-N, M, R = map(int, input().split())
-E = [[] for _ in range(N + 1)]
-V = [[False, 0] for _ in range(N + 1)]
-
-for i in range(1, M + 1):
-    u, v = map(int, input().split())
-    E[u].append(v)
-    E[v].append(u)
-
-bfs(V, E, R)
+dijkstra()
+print(visited[end])
+ 

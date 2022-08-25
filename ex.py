@@ -1,26 +1,20 @@
-N=int(input())
-arr=list(map(int,input().split()))
-visited=[False]*(N+1)
-k=2 # 직전 배터리 소모량
-b=100  # 남은 배터리량
-tmp=0
-check=False
-for i in range(N):
-    t=arr[i]
-    if not visited[t]:
-        visited[tmp]=False
-        tmp=t
-        visited[t]=True
-        b-=2
-        k=2
-    else:
-        if check==True:
-            k=1
-            check=False
-        k*=2
-        b-=k
-    if b<=0:
-        b=100
-        k=0
-        check=True
-print(100-b)
+import sys
+input=sys.stdin.readline
+
+for _ in range(int(input())):
+    N,M=map(int,input().split())
+    arr=[]
+    for i in range(N):
+        l=map(int,input().split())
+        for j in l:
+            arr.append(j)
+    for i in range(N-1):
+        l=map(int,input().split())
+        for j in l:
+            arr.append(j)
+    arr.sort()
+    sum=0
+    cnt=N*M-1
+    for i in range(cnt):
+        sum+=arr[i]
+    print(sum)
