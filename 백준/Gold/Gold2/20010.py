@@ -8,7 +8,6 @@ def Dijk(graph,node):
     dist[node]=0
     t=[]
     heapq.heappush(t, [0,node])
-    
     while t:
         Z,X=heapq.heappop(t)
         if dist[X]>=Z:

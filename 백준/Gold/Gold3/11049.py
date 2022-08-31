@@ -10,8 +10,6 @@ def DP(matrix):
                 dp[j][x]=sys.maxsize
                 for k in range(j,x):
                     dp[j][x]=min(dp[j][x],dp[j][k]+dp[k+1][x]+matrix[j]*matrix[k+1]*matrix[x+1])
-    for i in range(N):
-        print(dp[i])
     return dp[0][-1]
 
 N=int(input())

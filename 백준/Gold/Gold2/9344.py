@@ -13,14 +13,12 @@ for _ in range(int(input())):
     
     q=graph[1]
     heapq.heapify(q)
-    result=0
     visited=[True,True]+[False]*(N-1)
     check=False
     while q:
         Z,X,Y=heapq.heappop(q)
         if not visited[X]:
             visited[X]=True
-            result+=Z
             if (X==x and Y==y) or (X==y and Y==x):
                 check=True
             for i in graph[X]:

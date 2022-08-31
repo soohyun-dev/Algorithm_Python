@@ -12,7 +12,6 @@ for i in range(M):
         graph[u].append((d,v))
         graph[v].append((d,u))
 
-
 q=graph[1]
 visited=[True]+[False]*N
 visited[1]=True

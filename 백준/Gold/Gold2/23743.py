@@ -27,5 +27,4 @@ while q:
         for i in graph[X]:
             if not visited[i[1]]:
                 heapq.heappush(q,i)
-print(visited)
 print(result)

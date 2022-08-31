@@ -15,7 +15,7 @@ def MST(graph):
             for j in graph[X]:
                 if not visited[j[1]]:
                     heapq.heappush(q,j)
-    print(result)
+
     return result
 
 N,M=map(int,input().split())
@@ -34,9 +34,6 @@ for i in range(M+1):
         min_graph[a].append((0,b))
         min_graph[b].append((0,a))
 
-print(max_graph)
-print(min_graph)
-
 MAX=(N-MST(max_graph))**2
 MIN=MST(min_graph)**2
-print(MAX,MIN)
+print(MAX-MIN)

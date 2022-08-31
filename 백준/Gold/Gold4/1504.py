@@ -17,6 +17,7 @@ result_2=0
 for i in range(3):
     q=[(0,check[i])]
     dist=[inf]*(N+1)
+    dist[check[i]]=0
     while q:
         Z,X=heapq.heappop(q)
         if dist[X]<Z:
