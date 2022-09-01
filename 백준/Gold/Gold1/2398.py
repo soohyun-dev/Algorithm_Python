@@ -3,7 +3,7 @@ import heapq
 import sys
 input=sys.stdin.readline
 
-def dijkstra(start,end):
+def dijkstra(start):
     q=[(0,start,0)]
     dist=[inf]*(N+1)
     dist[start]=0
@@ -35,32 +35,22 @@ for i in range(M):
     graph[b].append((c,a,b))
 A,B,C=map(int,input().split())
 
-result=[]
-
-AB=dijkstra(A,B)
-result+=returnRoad(A,B,AB[1])
-AC=dijkstra(A,C)
-result+=returnRoad(A,C,AC[1])
-BC=dijkstra(B,C)
-result+=returnRoad(B,C,BC[1])
-
-new_arr=[]
-for i in result:
-    A=i
-    B=[A[1],A[0]]
-    if A not in new_arr and B not in new_arr :
-        new_arr.append(i)
-
+DA=dijkstra(A)
+DB=dijkstra(B)
+DC=dijkstra(C)
 cnt=0
-for j in new_arr:
-    for k in graph[j[0]]:
-        if k[1]==j[1]:
-            cnt+=k[0]
-            break
-    for n in graph[j[1]]:
-        if k[1]==j[0]:
-            cnt+=k[0]
-            break
-print(cnt, len(new_arr))
-for i in new_arr:
-    print(*i)
+leng=inf
+point=0
+for i in range(1,N+1):
+    if DA[0][i]+DB[0][i]+DC[0][i]<leng:
+        point=i
+        leng=DA[0][i]+DB[0][i]+DC[0][i] 
+         
+new_arr=list()
+new_arr+=(returnRoad(A,point,DA[1]))        
+new_arr+=(returnRoad(B,point,DB[1]))   
+new_arr+=(returnRoad(C,point,DC[1]))  
+
+print(leng,len(new_arr))
+for i,j in new_arr:
+    print(i,j)

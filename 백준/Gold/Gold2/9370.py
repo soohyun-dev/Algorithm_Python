@@ -37,13 +37,15 @@ for i in range(int(input())):
     target_HG=dijkstra(H,G)
     answer=[]
     for k in range(T):
+        if target[k][1]==inf:
+            continue
         finish=target[k][0]
         HG=dijkstra(G,finish)
         GH=dijkstra(H,finish)
         check=False
-        if target_G+target_GH+GH==target[k][1] and target[k][1]!=inf:
+        if target_G+target_GH+GH==target[k][1]:
             check=True
-        if target_H+target_HG+HG==target[k][1] and target[k][1]!=inf:
+        if target_H+target_HG+HG==target[k][1]:
             check=True
         if check==True:
             answer.append(target[k][0])
