@@ -1,5 +1,8 @@
+def fibonacci(num):
+    arr=[1]*(num+1)
+    for i in range(4,N+1):
+        arr[i]=arr[i-1]+arr[i-3]
+    return arr[num]
+
 N=int(input())
-dp=[1]*117
-for i in range(4,N+1):
-    dp[i]=dp[i-1]+dp[i-3]
-print(dp[N])
+print(fibonacci(N))
