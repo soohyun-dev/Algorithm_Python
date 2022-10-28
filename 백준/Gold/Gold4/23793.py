@@ -18,7 +18,6 @@ def dijkstra(start,end,center):
                 if cost<dist[next]:
                     dist[next]=cost
                     heapq.heappush(q,[cost,next])
-    print(dist)
     return dist[end]
 
 N,M=map(int,input().split())
